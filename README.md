@@ -1,47 +1,51 @@
-# Next.js with Drizzle ORM
+# Cursor Drizzle
 
-A simple Todo application built with Next.js and Drizzle ORM to demonstrate how to use Drizzle with Next.js.
+A Next.js application with Drizzle ORM and SQLite.
 
 ## Features
 
-- Next.js 15 with App Router
-- Drizzle ORM for database operations
-- SQLite database
-- TypeScript
-- Tailwind CSS for styling
-- Simple Todo CRUD operations
+- Next.js 15 with React 19
+- Drizzle ORM with SQLite
+- PWA support
+- Todo application with comments
 
-## Getting Started
+## Development
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Generate migrations:
-   ```bash
-   npm run db:generate
-   ```
-4. Run migrations:
-   ```bash
-   npm run db:migrate
-   ```
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
+```bash
+# Install dependencies
+npm install
 
-## Project Structure
+# Run database migrations
+npm run db:migrate
 
-- `src/db/schema.ts` - Database schema definition
-- `src/db/index.ts` - Database connection setup
-- `src/db/migrate.ts` - Migration script
-- `src/app/api/todos/route.ts` - API routes for todos
-- `src/components/` - React components
-- `src/app/page.tsx` - Main page component
+# Start development server
+npm run dev
+```
 
-## Learn More
+## Deployment
 
-- [Drizzle ORM Documentation](https://orm.drizzle.team/docs/overview)
-- [Next.js Documentation](https://nextjs.org/docs)
+This application is configured for deployment on Vercel. The database configuration automatically adapts to the production environment.
+
+### Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+```
+
+### Database in Production
+
+In production (Vercel), the application uses an in-memory SQLite database that gets recreated on each serverless function invocation. This means data won't persist between requests.
+
+For a production application, consider using:
+- Vercel Postgres
+- PlanetScale
+- Supabase
+- Neon
+
+## License
+
+MIT
