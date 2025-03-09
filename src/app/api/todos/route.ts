@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db, schema } from '@/db/index';
-import { eq } from 'drizzle-orm';
 
 // GET /api/todos - Get all todos
 export async function GET() {
